@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Formulario</title>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.serializejson.js"></script>
+</head>
+
+<body>
+	<section>
+		<h1>Registrarse</h1>
+		<form id="myform" action="" method="post">
+			<input type="text" placeholder="Nombre de usuario" autocomplete="on" autofocus name="txtUserName" required/><br><br>
+			<input type="email" placeholder="tucorreo@ejemplo.com" name="txtEmail" required/><br><br>
+			<input type="password" placeholder="Pass" name="txtPass" required/><br><br>
+			<input type="password" placeholder="Verifica Pass" name="txtVPass" required/><br><br>
+			<input type="checkbox" name="chkAcept" required id="chkAcept">Acepto que he leido <a href="http://127.0.0.1:8080/miprueba/Legal.html">Terminos y condiciones</a><br><br>
+			<button name="btnIngreso" onClick="serializar()">Registrate!</button>
+		</form>
+		<script>
+			function serializar()
+			{
+				var text="";
+				text = $('#myform').serializeJSON();
+				if($('#chkAcept').is(':checked'))
+				{
+					if(text.txtUserName==""||text.txtPass==""||text.txtEmail=="")
+						alert("Por favor, llene los campos obligatorios *");
+					else
+					{
+						if(text.txtPass.length<8)
+							alert("Contraseña muy corta.\nMinimo 8 Caracteres");
+						else
+						{
+							if(text.txtPass==text.txtVPass)
+							{
+								console.log(text);
+								alert("Bienvenido "+text.txtUserName+".");
+							}
+							else
+								alert("Las contraseñas no coinciden.\nFavor de volver a intentarlo.")
+						}
+					}
+				}
+			}
+		</script>
+	</section>
+</body>
+</html>
