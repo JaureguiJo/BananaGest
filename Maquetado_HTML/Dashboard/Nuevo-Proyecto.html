@@ -1,34 +1,100 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <title>Proyecto Nuevo</title>
-    </head>
-    <body>
-        <section style="align-self: center;">
-            <section>
-                <h1>Nuevo Proyecto</h1>
-                <form>
-                    Nombre del Proyecto:<br>
-                    <input type="text" name="txtNombre" placeholder="Nombre...">
-                    <br><br>
-                    Descripcion:<br>
-                    <textarea cols="50" rows="6" placeholder="Descripcion..."></textarea>
-                    <br><br>
-                    Fecha Inicio:<br>
-                    <input type="date">
-                    <br><br>
-                    Fecha Limite<br>
-                    <input type="date">
-                    <br><br>
-                    Responsables:<br>
-                    <select>
-                        <option value="Me">Yo</option>
-                    </select>
-                    <br><br>
-                    <input type="submit" value="Go!">
-                </form>
-            </section>
-        </section>
+<head>
+  <meta charset="utf-8">
+  <title>Nuevo Proyecto</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css"/>  
+  <link type="text/css" rel="stylesheet" href="../css/main.css">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body background="../img/benene3.jpg" style="background-position: left;">
+    <header>
+      <nav>
+        <div class="nav-wrapper light-blue darken-4">
+          <a href="#!" class="brand-logo right">Banana GEST</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header><br>
+<!--  -  -  -  -  termina header  -  -  -  -  -->
+    <div class="row" ><div class="col s0 m2 l4"></div>
+        <div class="col s12 m8 l4">
+          <form>
+            <div class="card light-blue darken-4">
+            <div class="card-content white-text">
+                <h4 class="center">Nuevo Proyecto</h4>
+                <div class="input-field col s10">
+                <input id="first_name2" type="text">
+                <label style="color: white" class="active" for="first_name2">Nombre del proyecto</label>
+                </div>
+                <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label style="color: white">Descripción</label>
+            </div>
+                <div class="input-field col s12">
+                <label style="color: white" >Fecha de inicio</label>
+                <input type="text" class="datepicker">
+                </div>
+                <div class="input-field col s12">
+                <label style="color: white">Fecha límite</label>
+                <input type="text" class="datepicker">
+                </div>
+
+
+                <div class="input-field col s12">
+                <select>
+                <option value="white-text" disabled selected>Selecciona al responsable</option>
+                <option value="1">Yo</option>
+                <option value="2">Tú</option>
+                <option value="3">Él</option>
+                </select>
+                <div class="input-field col s12">
+                <label style="color: white">Responsable:</label>
+                </div>
+                <br>
+                </div>
+                <br><br>
+    <!--  -  -  -  -  - botón aceptar  -  -  -  -  -  -->
+                    <button class="btn waves-effect light-blue darken-2" type="submit" name="action">Aceptar
+                    <i class="material-icons right">send</i>
+                    </button>
+                </div>
+        </div><div class="col s0 m2 l4"></div>
+    
+    
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+      <script> 
+          $(document).ready(function() {
+            $(".button-collapse").sideNav();
+            Materialize.updateTextFields();
+            $('select').material_select();
+            }); 
+          
+          $('.datepicker').pickadate({
+            selectMonths: true, // control months
+            selectYears: 15, // 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false // Close upon selecting a date,
+            });
+      </script>
     </body>
 </html>

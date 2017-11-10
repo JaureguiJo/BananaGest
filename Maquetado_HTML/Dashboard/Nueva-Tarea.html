@@ -1,31 +1,89 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <title>Tarea Nueva</title>
-    </head>
-    <body>
-        <section style="align-self: center;">
-            <section>
-                <h1>Nueva Tarea</h1>
+<head>
+  <meta charset="utf-8">
+  <title>Nueva Tarea</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css"/>  
+  <link type="text/css" rel="stylesheet" href="../css/main.css">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body background="../img/benene5.jpg" style="background-position: 80%;">
+    <header>
+      <nav>
+        <div class="nav-wrapper light-blue darken-3">
+          <a href="#!" class="brand-logo right">Banana GEST</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header><br>
+<!--  -  -  -  -  termina header  -  -  -  -  -->
+    <div class="row" ><div class="col s0 m2 l4"></div>
+        <div class="col s12 m8 l4">
+          <div class="card light-blue darken-3">
+            <div class="card-content white-text">
+                <h4 class="center">Nueva Tarea</h4>
                 <form>
-                    Nombre de la Tarea:<br>
-                    <input type="text" name="txtNombre" placeholder="Nombre...">
-                    <br><br>
-                    Descripcion:<br>
-                    <textarea cols="50" rows="6" placeholder="Descripcion..."></textarea>
-                    <br><br>
-                    Duración (hrs):<br>
-                    <input type="number" min="0" >
-                    <br><br>
-                    Responsables:<br>
+                <div class="input-field col s10">
+                <input id="first_name2" type="text">
+                <label style="color: white" class="active" for="first_name2">Nombre de la tarea</label>
+                </div>
+                    <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label style="color: white">Descripción</label>
+        </div>
+                    <div class="input-field col s10">
+                    <br><br><label style="color: white">Duración de hrs.</label>
+                    <p class="range-field">
+                <input type="range" min="0hrs" max="80hrs" />
+                    </p><br>
+                    </div>
+                    <br>
+                    <div class="input-field col s12">
                     <select>
-                        <option value="Me">Yo</option>
+                    <option value="white-text" disabled selected>Selecciona al responsable</option>
+                    <option value="1">Yo</option>
+                    <option value="2">Tú</option>
+                    <option value="3">Él</option>
                     </select>
+                    <label style="color: white">Responsable</label>
+                    <br>
+                </div>
                     <br><br>
-                    <input type="submit" value="Go!">
+    <!--  -  -  -  -  - botón aceptar  -  -  -  -  -  -->
+                    <button class="btn waves-effect light-blue darken-1" type="submit" name="action">Aceptar
+                    <i class="material-icons right">send</i>
+                    </button>
                 </form>
-            </section>
-        </section>
+                </div>
+            </div>
+        </div><div class="col s0 m2 l4"></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+      <script> 
+          $(document).ready(function() {
+            $(".button-collapse").sideNav();
+            Materialize.updateTextFields();
+            $('select').material_select();
+            }); 
+      </script>
     </body>
 </html>
