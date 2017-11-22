@@ -46,8 +46,8 @@ function serializarRegistro()
         if($('#check').is(':checked')){
             
             text = $('#myform').serializeJSON();
-            if (text.nombre == "" || text.mail == "" || text.psw == "" || text.validar_psw == "" || text.cel == "") {
-                if(text.mail == "" && text.psw == "" && text.nombre == "" && text.validar_psw == "" && text.cel == "")
+            if (text.nombre == "" || text.mail == "" || text.psw == "" || text.validar_psw == "") {
+                if(text.mail == "" && text.psw == "" && text.nombre == "" && text.validar_psw == "")
                      alert("Se necesitan llenar los campos");
                 else if(text.mail == "")
                     alert("Campo para el correro no a sido completado");
@@ -57,8 +57,6 @@ function serializarRegistro()
                     alert("Por favor valide su contraseña");
                 else if(text.nombre == "")
                     alert("Campo de nombre no a sido completado");
-                else if(text.cel == "")
-                    alert("Campo de celular no a sido completado");
             }
             else{
                 console.log(text);

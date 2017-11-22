@@ -1,7 +1,7 @@
 body {
     /* background-image: url("../img/benene3.jpg"); */
     background-color: #81d4fa ;
-    color: ;
+    
     margin: 0px;
     padding: 0px;
     border: 0px;
@@ -75,4 +75,7 @@ label {
 
 brand-logo a {
     font-family: 'Open Sans', sans-serif;
+}
+option{
+    background-color: rgba(155, 15, 255, 0.67);
 }
